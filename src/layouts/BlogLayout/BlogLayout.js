@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "semantic-ui-react";
+import { Container, Segment } from "semantic-ui-react";
 import MainNav from "../../components/MainNav";
 import Footer from "../../components/Footer";
 import "./BlogLayout.scss";

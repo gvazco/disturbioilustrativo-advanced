@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, GridColumn, Icon } from "semantic-ui-react";
+import { Container, Grid } from "semantic-ui-react";
 import Logo01 from "../../images/icons/Logo01.svg";
 import Logo02 from "../../images/icons/Logo02.svg";
 import Logo03 from "../../images/icons/Logo03.svg";
