@@ -18,7 +18,7 @@ export default function NavBarMenu() {
         </Menu.Item>
 
         <Menu.Item position="right" as="a">
-          <Link to="/">Inicio</Link>
+          <Link to="/#artes-list">Inicio</Link>
         </Menu.Item>
 
         <Dropdown position="right" item simple text="Menú">

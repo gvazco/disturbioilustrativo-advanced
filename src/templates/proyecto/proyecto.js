@@ -24,12 +24,10 @@ export default function Proyecto(props) {
 
         <span>
           <Icon name="calendar alternate outline" />
-          {moment(proyecto.date).format("LL")}
         </span>
 
         <h3 className="place">
           <Icon name="map marker alternate" />
-          {proyecto.FieldsProyectos.place}
         </h3>
         <div
           dangerouslySetInnerHTML={{
