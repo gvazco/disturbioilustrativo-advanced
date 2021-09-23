@@ -1,0 +1,13 @@
+@import "../../sass/index.scss";
+
+.navbar {
+
+  .dropdown{
+    margin-right: 20px;
+    .item{
+      a{
+        color: black !important;
+      }
+    }
+ }
+}

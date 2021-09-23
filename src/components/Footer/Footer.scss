@@ -1,19 +1,7 @@
 @import "../../sass/index.scss";
 .footer {
-	background-color: black;
-	height: auto;
-	padding: 10px 0;
-	display: flex !important;
-	justify-content: center;
-	@media (max-width: $breakpoint-up-sm) {
-		margin: 0 14px !important;
-
-		.ui.grid > .column:only-child {
-			margin-left: 10%;
-		}
-	}
-	.logo {
-		padding: 5px;
-		margin: 0 5px;
+	.image.icono{
+		width: 100px;
+		height: auto;	
 	}
 }
