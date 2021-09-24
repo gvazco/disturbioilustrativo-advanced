@@ -1,11 +1,11 @@
 import React from "react"
 import BlogLayout from "../../layouts/BlogLayout"
-import { Icon } from "semantic-ui-react"
+import { Icon, Image } from "semantic-ui-react"
 import moment from "moment"
 import "moment/locale/es"
 import TransformOembedToIframe from "../../utils/TransformOembedToIframe"
 import "./proyecto.scss"
-// import Seo from "../../components/seo"
+import Seo from "../../components/seo"
 
 export default function Proyecto(props) {
   const { pageContext } = props
@@ -13,17 +13,22 @@ export default function Proyecto(props) {
 
   return (
     <BlogLayout className="proyecto">
-      {/* <Seo
+      <Seo
         title={proyecto.Seo.seotitle}
         description={proyecto.Seo.seodescription}
         image={proyecto.featuredImage.node.localFile.publicURL}
-      /> */}
+      />
 
       <div className="markdown-body">
+        <Image
+          className="featured-img"
+          src={proyecto.featuredImage.node.localFile.publicURL}
+        />
         <h1>{proyecto.title}</h1>
 
         <span>
           <Icon name="calendar alternate outline" />
+          {moment(proyecto.date).format("LL")}
         </span>
 
         <h3 className="place">

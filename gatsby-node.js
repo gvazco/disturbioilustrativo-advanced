@@ -40,6 +40,15 @@ exports.createPages = async ({ actions, graphql }) => {
     query {
       allWpProyecto(sort: { fields: date, order: DESC }) {
         nodes {
+          id
+          slug
+          Seo {
+            seodescription
+            seotitle
+          }
+          Proyectos {
+            cliente
+          }
           author {
             node {
               name
@@ -54,8 +63,12 @@ exports.createPages = async ({ actions, graphql }) => {
               }
             }
           }
-          slug
-          title
+          categories {
+            nodes {
+              slug
+              name
+            }
+          }
         }
       }
     }

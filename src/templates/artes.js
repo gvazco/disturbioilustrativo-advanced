@@ -5,8 +5,7 @@ import Pagination from "../components/Pagination"
 import BlogLayout from "../layouts/BlogLayout"
 import ArtsList from "../components/ArtsList"
 import Hero from "../components/Hero"
-// import Seo from "../components/seo"
-// import imageArtsos from "../images/remates.jpg"
+import Seo from "../components/seo"
 
 export default function Artes(props) {
   const { data, pageContext } = props
@@ -14,16 +13,15 @@ export default function Artes(props) {
 
   return (
     <BlogLayout>
-      {/* <Seo
-        title="Artes de Mevasa Comercializadora"
-        description="Catálogo de Artes y Accesorios"
-        image={imageArtsos}
-      /> */}
+      <Seo
+        title="Portafolio de Artes y Trabajos"
+        description="Portafolío de Artes y Trabajos"
+      />
       <Hero />
       <Header
         as="h2"
         textAlign="center"
-        content="ÚLTIMAS PUBLICACIONES"
+        content="NOTICIAS DESTACADAS"
         style={{ marginTop: "1.5em" }}
         id="artes-list"
       />

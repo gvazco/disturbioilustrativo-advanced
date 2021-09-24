@@ -7,6 +7,7 @@ import {
   Image,
   List,
   Segment,
+  Icon,
 } from "semantic-ui-react"
 import Icono from "../../images/icono.png"
 import "./Footer.scss"
@@ -21,12 +22,12 @@ export default function Footer() {
       <Container textAlign="center" className="footer">
         <Grid divided inverted stackable>
           <Grid.Column width={3}>
-            <Header inverted as="h4" content="Group 1" />
+            <Header inverted as="h4" content="Contacto" />
             <List link inverted>
-              <List.Item as="a">Link One</List.Item>
-              <List.Item as="a">Link Two</List.Item>
-              <List.Item as="a">Link Three</List.Item>
-              <List.Item as="a">Link Four</List.Item>
+              <List.Item as="a">5581853675</List.Item>
+              <List.Item as="a">5563719043</List.Item>
+              <List.Item as="a">info@disturbioilustrativo.com</List.Item>
+              <List.Item as="a">Google Forms</List.Item>
             </List>
           </Grid.Column>
           <Grid.Column width={3}>
@@ -49,10 +50,12 @@ export default function Footer() {
           </Grid.Column>
           <Grid.Column width={7}>
             <Header inverted as="h4" content="Síguenos en Redes Sociales" />
-            <p>
-              Espacio Adicional para introducir una llamada a la acción en el
-              área de Footer.
-            </p>
+            <div className="redes">
+              <Icon size="large" name="facebook" />
+              <Icon size="large" name="instagram" />
+              <Icon size="large" name="facebook messenger" />
+              <Icon size="large" name="youtube" />
+            </div>
           </Grid.Column>
         </Grid>
 
@@ -63,10 +66,10 @@ export default function Footer() {
             Disturbio Ilustrativo * 2021 - Todos los derechos reservados
           </List.Item>
           <List.Item as="a" href="#">
-            Contact Us
+            Contacto
           </List.Item>
           <List.Item as="a" href="#">
-            Privacy Policy
+            Politica de Privacidad
           </List.Item>
         </List>
       </Container>

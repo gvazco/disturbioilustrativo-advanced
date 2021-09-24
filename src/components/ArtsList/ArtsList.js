@@ -20,20 +20,6 @@ export default function ArtsList(props) {
                 <Link to={`/artes/${arte.slug}`}>{arte.title}</Link>
               </Card.Header>
             </Card.Content>
-            <Card.Content extra>
-              <Card.Meta>
-                <Icon name="certificate" />
-              </Card.Meta>
-              <Button.Group>
-                <Button positive href="#">
-                  Comprar Ahora
-                </Button>
-                <Button.Or text="IR" />
-                <Button primary href={`/artes/${arte.slug}`}>
-                  Info Arte
-                </Button>
-              </Button.Group>
-            </Card.Content>
           </Card>
         </Grid.Column>
       ))}

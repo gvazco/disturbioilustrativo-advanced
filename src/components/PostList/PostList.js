@@ -1,5 +1,5 @@
 import React from "react"
-import { CardColumns, Card } from "react-bootstrap"
+import { Grid, Card, Icon, Image } from "semantic-ui-react"
 import { Link } from "gatsby"
 import { map } from "lodash"
 // import moment from "moment"
@@ -11,24 +11,24 @@ export default function PostList(props) {
   console.log(posts)
 
   return (
-    <CardColumns className="post-list">
+    <Grid className="post-list">
       {map(posts, post => (
-        <Link to={`/${post.slug}`}>
-          <Card className="post-list__item text-center">
-            <Card.Img
-              variant="top"
-              src={post.featuredImage.node.localFile.publicURL}
-            />
-            <Card.ImgOverlay className="item-meta">
-              <div>
-                <Card.Title>{post.title}</Card.Title>
-
-                {/* <Card.Subtitle>{post.categories.nodes.name}</Card.Subtitle> */}
-              </div>
-            </Card.ImgOverlay>
-          </Card>
-        </Link>
+        <Grid.Column key={post.id} mobile={16} tablet={16} computer={5}>
+          <Link to={`/blog/${post.slug}`}>
+            <Card className="post-list__item">
+              <Image src={post.featuredImage.node.localFile.publicURL} />
+              <Card.Content>
+                <Card.Header>{post.title}</Card.Header>
+              </Card.Content>
+              <Card.Content extra>
+                <Card.Meta>
+                  <Icon name="file text" />
+                </Card.Meta>
+              </Card.Content>
+            </Card>
+          </Link>
+        </Grid.Column>
       ))}
-    </CardColumns>
+    </Grid>
   )
 }

@@ -13,8 +13,8 @@ export default function Blog(props) {
   return (
     <BlogLayout>
       <Seo
-        title="Portafolio de Alexis Velázquez"
-        description="Muestra de mis mejores trabajos profesionales."
+        title="Blog de Disturbio Ilustrativo"
+        description="las mejores noticias y novedades relacionadas con el arte y la tecnología."
         image={imageBlog}
       />
       <PostList posts={posts} />
@@ -31,7 +31,6 @@ export const query = graphql`
         title
         content
         slug
-        date
         categories {
           nodes {
             name

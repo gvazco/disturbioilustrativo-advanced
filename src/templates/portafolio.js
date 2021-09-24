@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import Pagination from "../components/Pagination"
 import BlogLayout from "../layouts/BlogLayout"
 import ProjectList from "../components/PojectList"
-// import Seo from "../components/seo"
+import Seo from "../components/seo"
 
 export default function Portafolio(props) {
   const { data, pageContext } = props
@@ -11,11 +11,10 @@ export default function Portafolio(props) {
 
   return (
     <BlogLayout>
-      {/* <Seo
-        title="Portafolio de Techos y Mantenimientos"
-        description="Muestra de proyectos realizados durante los últimos 10 años."
-        image={imageProyecto}
-      /> */}
+      <Seo
+        title="Portafólio de Artes y Trabajos"
+        description="Muestra de proyectos realizados durante los últimos meses."
+      />
       <ProjectList proyectos={proyectos} />
       <Pagination pageContext={pageContext} />
     </BlogLayout>
@@ -29,6 +28,15 @@ export const query = graphql`
       sort: { fields: date, order: DESC }
     ) {
       nodes {
+        id
+        slug
+        Seo {
+          seodescription
+          seotitle
+        }
+        Proyectos {
+          cliente
+        }
         author {
           node {
             name
@@ -43,9 +51,12 @@ export const query = graphql`
             }
           }
         }
-        slug
-        title
-        date
+        categories {
+          nodes {
+            slug
+            name
+          }
+        }
       }
     }
   }
