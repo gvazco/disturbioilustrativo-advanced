@@ -31,21 +31,21 @@ export default function Footer() {
             </List>
           </Grid.Column>
           <Grid.Column width={3}>
-            <Header inverted as="h4" content="Group 2" />
+            <Header inverted as="h4" content="Servicios" />
             <List link inverted>
-              <List.Item as="a">Link One</List.Item>
-              <List.Item as="a">Link Two</List.Item>
-              <List.Item as="a">Link Three</List.Item>
-              <List.Item as="a">Link Four</List.Item>
+              <List.Item as="a">Branding</List.Item>
+              <List.Item as="a">Diseño Web</List.Item>
+              <List.Item as="a">Render 3D</List.Item>
+              <List.Item as="a">Fotografía & Video</List.Item>
             </List>
           </Grid.Column>
           <Grid.Column width={3}>
-            <Header inverted as="h4" content="Group 3" />
+            <Header inverted as="h4" content="Sugerencias" />
             <List link inverted>
-              <List.Item as="a">Link One</List.Item>
-              <List.Item as="a">Link Two</List.Item>
-              <List.Item as="a">Link Three</List.Item>
-              <List.Item as="a">Link Four</List.Item>
+              <List.Item as="a">Incio</List.Item>
+              <List.Item as="a">Portafolio</List.Item>
+              <List.Item as="a">Blog</List.Item>
+              <List.Item as="a">Merchandising</List.Item>
             </List>
           </Grid.Column>
           <Grid.Column width={7}>

@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Header } from "semantic-ui-react"
 import Pagination from "../components/Pagination"
 import BlogLayout from "../layouts/BlogLayout"
 import ProjectList from "../components/PojectList"
@@ -14,6 +15,13 @@ export default function Portafolio(props) {
       <Seo
         title="Portafólio de Artes y Trabajos"
         description="Muestra de proyectos realizados durante los últimos meses."
+      />
+      <Header
+        as="h2"
+        textAlign="center"
+        content="NUESTRO TRABAJO"
+        style={{ marginTop: "1.5em" }}
+        id="artes-list"
       />
       <ProjectList proyectos={proyectos} />
       <Pagination pageContext={pageContext} />
