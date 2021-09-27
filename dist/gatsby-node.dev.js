@@ -26,12 +26,12 @@ exports.createPages = function _callee(_ref) {
           posts = _context.sent;
           console.log(posts.data.allWpPost.nodes);
           _context.next = 8;
-          return regeneratorRuntime.awrap(graphql("\n    query {\n      allWpProyecto(sort: { fields: date, order: DESC }) {\n        nodes {\n          id\n          slug\n          Seo {\n            seodescription\n            seotitle\n          }\n          Proyectos {\n            cliente\n          }\n          author {\n            node {\n              name\n            }\n          }\n          content\n          excerpt\n          featuredImage {\n            node {\n              localFile {\n                publicURL\n              }\n            }\n          }\n          categories {\n            nodes {\n              slug\n              name\n            }\n          }\n        }\n      }\n    }\n  "));
+          return regeneratorRuntime.awrap(graphql("\n    query {\n      allWpProyecto(sort: { fields: date, order: DESC }) {\n        nodes {\n          id\n          slug\n          title\n          Seo {\n            seodescription\n            seotitle\n          }\n          Proyectos {\n            cliente\n          }\n          author {\n            node {\n              name\n            }\n          }\n          content\n          excerpt\n          featuredImage {\n            node {\n              localFile {\n                publicURL\n              }\n            }\n          }\n          categories {\n            nodes {\n              slug\n              name\n            }\n          }\n        }\n      }\n    }\n  "));
 
         case 8:
           portafolios = _context.sent;
           _context.next = 11;
-          return regeneratorRuntime.awrap(graphql("\n    query {\n      allWpArte {\n        nodes {\n          content\n          excerpt\n          date\n          featuredImage {\n            node {\n              localFile {\n                publicURL\n              }\n            }\n          }\n          slug\n          title\n        }\n      }\n    }\n  "));
+          return regeneratorRuntime.awrap(graphql("\n    query {\n      allWpArte {\n        nodes {\n          Artes {\n            url\n          }\n          id\n          slug\n          Seo {\n            seodescription\n            seotitle\n          }\n          author {\n            node {\n              name\n            }\n          }\n          content\n          excerpt\n          date\n          featuredImage {\n            node {\n              localFile {\n                publicURL\n              }\n            }\n          }\n          slug\n          title\n        }\n      }\n    }\n  "));
 
         case 11:
           artes = _context.sent;
@@ -70,7 +70,7 @@ exports.createPages = function _callee(_ref) {
             // The Gatsby `createPage` function
             items: artes.data.allWpArte.nodes,
             // An array of objects
-            itemsPerPage: 12,
+            itemsPerPage: 3,
             // How many items you want per page
             pathPrefix: "/",
             // Creates pages like `/blog`, `/blog/2`, etc

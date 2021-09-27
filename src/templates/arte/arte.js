@@ -2,7 +2,7 @@ import React from "react"
 import { Grid, Image, Button, Label } from "semantic-ui-react"
 import BlogLayout from "../../layouts/BlogLayout"
 import "./arte.scss"
-// import Seo from "../../components/seo"
+import Seo from "../../components/seo"
 
 export default function Arte(props) {
   const { pageContext } = props
@@ -10,11 +10,7 @@ export default function Arte(props) {
 
   return (
     <BlogLayout className="arte">
-      {/* <Seo
-        title={arte.Seo.seotitle}
-        description={arte.Seo.seodescription}
-        image={arte.featuredImage.node.localFile.publicURL}
-      /> */}
+      <Seo title={arte.Seo.seotitle} description={arte.Seo.seodescription} />
 
       <div className="markdown-body">
         <div className="prod-excerpt">
@@ -24,14 +20,14 @@ export default function Arte(props) {
             <Grid.Column mobile={16} tablet={16} computer={8}>
               <Image src={arte.featuredImage.node.localFile.publicURL} />
               <Grid.Row className="buttons">
-                <Button
+                {/* <Button
                   positive
                   href="#"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
                   Cotizar ahora
-                </Button>
+                </Button> */}
               </Grid.Row>
             </Grid.Column>
             <Grid.Column mobile={16} tablet={10} computer={8}>

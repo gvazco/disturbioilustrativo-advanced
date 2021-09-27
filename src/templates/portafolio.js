@@ -38,6 +38,7 @@ export const query = graphql`
       nodes {
         id
         slug
+        title
         Seo {
           seodescription
           seotitle

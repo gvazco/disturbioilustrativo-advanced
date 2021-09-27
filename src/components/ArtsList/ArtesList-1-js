@@ -1,0 +1,60 @@
+import React from "react"
+import { Grid, Card, Image, CardColumns } from "semantic-ui-react"
+import { Link } from "gatsby"
+import { map } from "lodash"
+import "./ArtsList.scss"
+
+export default function ArtsList(props) {
+  const { artes } = props
+
+  return (
+    <CardColumns className="arte-list">
+      {map(artes, arte => (
+        <Link to={`/${arte.Artes.url}`}>
+          <Card className="arte-list__item text-center">
+            <Card.Img
+              variant="top"
+              src={arte.featuredImage.node.localFile.publicURL}
+            />
+            <Card.ImgOverlay className="item-meta">
+              <div>
+                <Card.Title>{arte.title}</Card.Title>
+              </div>
+            </Card.ImgOverlay>
+          </Card>
+        </Link>
+      ))}
+    </CardColumns>
+  )
+}
+
+
+import React from "react"
+import { Grid, Card, Image, CardColumns } from "semantic-ui-react"
+import { Link } from "gatsby"
+import { map } from "lodash"
+import "./ArtsList.scss"
+
+export default function ArtsList(props) {
+  const { artes } = props
+
+  return (
+    <CardColumns className="arte-list">
+      {map(artes, arte => (
+        <Link to={`/${arte.Artes.url}`}>
+          <Card className="arte-list__item text-center">
+            <Card.Img
+              variant="top"
+              src={arte.featuredImage.node.localFile.publicURL}
+            />
+            <Card.ImgOverlay className="item-meta">
+              <div>
+                <Card.Title>{arte.title}</Card.Title>
+              </div>
+            </Card.ImgOverlay>
+          </Card>
+        </Link>
+      ))}
+    </CardColumns>
+  )
+}

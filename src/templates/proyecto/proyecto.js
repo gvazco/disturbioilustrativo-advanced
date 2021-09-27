@@ -1,6 +1,6 @@
 import React from "react"
 import BlogLayout from "../../layouts/BlogLayout"
-import { Icon, Image } from "semantic-ui-react"
+import { Icon, Image, Container } from "semantic-ui-react"
 import moment from "moment"
 import "moment/locale/es"
 import TransformOembedToIframe from "../../utils/TransformOembedToIframe"
@@ -18,28 +18,23 @@ export default function Proyecto(props) {
         description={proyecto.Seo.seodescription}
         image={proyecto.featuredImage.node.localFile.publicURL}
       />
+      <Container>
+        <div className="markdown-body">
+          <h1>{proyecto.title}</h1>
 
-      <div className="markdown-body">
-        <Image
-          className="featured-img"
-          src={proyecto.featuredImage.node.localFile.publicURL}
-        />
-        <h1>{proyecto.title}</h1>
+          <span>
+            <Icon name="calendar alternate outline" />
+            {moment(proyecto.date).format("LL")}
+          </span>
 
-        <span>
-          <Icon name="calendar alternate outline" />
-          {moment(proyecto.date).format("LL")}
-        </span>
-
-        <h3 className="place">
-          <Icon name="map marker alternate" />
-        </h3>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: TransformOembedToIframe(proyecto.content),
-          }}
-        />
-      </div>
+          <h3 className="place">{}</h3>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: TransformOembedToIframe(proyecto.content),
+            }}
+          />
+        </div>
+      </Container>
     </BlogLayout>
   )
 }

@@ -1,13 +1,15 @@
 @import "../../sass/index.scss";
 
 .navbar {
+  .navicon{
+    padding: 8px 0 8px 10px;
+  }
 
   .dropdown{
     margin-right: 20px;
+    
     .item{
-      a{
-        color: black !important;
-      }
+      color: black !important;
     }
  }
 }

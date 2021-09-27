@@ -35,6 +35,20 @@ export const query = graphql`
   query ($skip: Int!, $limit: Int!) {
     allWpArte(skip: $skip, limit: $limit, sort: { fields: date, order: DESC }) {
       nodes {
+        Artes {
+          url
+        }
+        id
+        slug
+        Seo {
+          seodescription
+          seotitle
+        }
+        author {
+          node {
+            name
+          }
+        }
         content
         excerpt
         date

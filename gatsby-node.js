@@ -42,6 +42,7 @@ exports.createPages = async ({ actions, graphql }) => {
         nodes {
           id
           slug
+          title
           Seo {
             seodescription
             seotitle
@@ -78,6 +79,20 @@ exports.createPages = async ({ actions, graphql }) => {
     query {
       allWpArte {
         nodes {
+          Artes {
+            url
+          }
+          id
+          slug
+          Seo {
+            seodescription
+            seotitle
+          }
+          author {
+            node {
+              name
+            }
+          }
           content
           excerpt
           date
@@ -117,7 +132,7 @@ exports.createPages = async ({ actions, graphql }) => {
   paginate({
     createPage, // The Gatsby `createPage` function
     items: artes.data.allWpArte.nodes, // An array of objects
-    itemsPerPage: 12, // How many items you want per page
+    itemsPerPage: 3, // How many items you want per page
     pathPrefix: "/", // Creates pages like `/blog`, `/blog/2`, etc
     component: path.resolve(`src/templates/artes.js`), // Just like `createPage()`
   })
