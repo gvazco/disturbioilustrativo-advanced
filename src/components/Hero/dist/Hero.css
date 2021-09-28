@@ -1,0 +1,77 @@
+@font-face {
+  font-family: Baron;
+  src: url("../../images/BaronNeue.otf") format("opentype");
+}
+.hero {
+  margin-top: -3.5em;
+  position: relative;
+  height: 800px;
+  min-height: 500px;
+  width: 100%;
+  background: url(https://disturbio-gatsby.disturbioilustrativo.com/wp-content/uploads/2021/09/DSC_0804.jpg) rgba(53, 83, 83, 0.376);
+  background-size: contain !important;
+  -webkit-background-size: contain !important;
+  text-align: center;
+  overflow: hidden;
+}
+.hero .row {
+  width: 96%;
+  max-width: 1020px;
+  margin: 0 auto;
+}
+.hero .banner {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  margin: 0 auto;
+  width: 85%;
+  padding-bottom: 30px;
+  text-align: center;
+}
+.hero .banner .banner-text {
+  width: 65%;
+  padding: 30px 0;
+  text-align: center;
+}
+.hero .banner .banner-text h1 {
+  font-size: 2.8em;
+  padding: 5px 0 0 18px;
+  font-family: Baron;
+  color: #fff;
+  letter-spacing: 25px;
+  margin: 0 0 1em 0;
+  filter: drop-shadow(2px 4px 6px black);
+  background-color: rgba(152, 151, 151, 0.15);
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08);
+}
+.hero .banner .redes {
+  margin: 0 0 3.5em 0;
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: 25px;
+}
+.hero .banner .redes i {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.hero .scrolldown a {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  margin-left: -29px;
+  color: #fff;
+  display: block;
+  height: 42px;
+  width: 42px;
+  font-size: 42px;
+  line-height: 42px;
+  color: #fff;
+  border-radius: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.hero .scrolldown a:hover {
+  color: #11ABB0;
+}
