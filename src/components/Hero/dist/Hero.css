@@ -1,18 +1,44 @@
+@charset "UTF-8";
 @font-face {
   font-family: Baron;
   src: url("../../images/BaronNeue.otf") format("opentype");
 }
+/* --------------------------------------------------------------- */
+/*                         Colores de Marca                        */
+/* --------------------------------------------------------------- */
+/* ----------------------------------------------------------------- */
+/*                      Fuentes Tipográficas                         */
+/* ----------------------------------------------------------------- */
+/* ----------------------------------------------------------------- */
+/*                              Bordes                               */
+/* ----------------------------------------------------------------- */
+/* ----------------------------------------------------------------- */
+/*                            Backgrounds                            */
+/* ----------------------------------------------------------------- */
+/* ------------------------------ Social Colors ----------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                                   Alertas                                  */
+/* -------------------------------------------------------------------------- */
+/* ----------------------------------- up ----------------------------------- */
+/* ---------------------------------- Down ---------------------------------- */
 .hero {
   position: relative;
-  margin-top: -4em;
-  height: 800px;
+  margin-top: -5em;
+  height: 900px;
   min-height: 500px;
   width: 100%;
-  background: url(https://disturbio-gatsby.disturbioilustrativo.com/wp-content/uploads/2021/09/DSC_0804.jpg) rgba(53, 83, 83, 0.376);
+  background: url(https://disturbio-gatsby.disturbioilustrativo.com/wp-content/uploads/2021/09/POSTAL.png) rgba(53, 83, 83, 0.376);
   background-size: cover !important;
   -webkit-background-size: cover !important;
   text-align: center;
   overflow: hidden;
+}
+@media (max-width: 576px) {
+  .hero {
+    background: url(https://disturbio-gatsby.disturbioilustrativo.com/wp-content/uploads/2021/09/WALPAPERS.png) rgba(53, 83, 83, 0.376);
+    height: 700px;
+    margin-top: -3.5em;
+  }
 }
 .hero .row {
   width: 96%;
@@ -22,16 +48,16 @@
 .hero .banner {
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   margin: 0 auto;
   width: 85%;
   padding-bottom: 30px;
   text-align: center;
 }
-.hero .banner .banner-text {
-  width: 70%;
-  padding: 30px 0;
-  text-align: center;
+@media (max-width: 576px) {
+  .hero .banner {
+    align-items: center;
+  }
 }
 .hero .banner .banner-text h1 {
   font-size: 2.8em;
@@ -44,34 +70,51 @@
   background-color: rgba(152, 151, 151, 0.15);
   box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.08);
 }
+@media (max-width: 576px) {
+  .hero .banner .banner-text h1 {
+    font-size: 1.8em;
+    letter-spacing: 15px;
+  }
+}
 .hero .banner .redes {
   margin: 0 0 3.5em 0;
-  color: #fff;
-  font-size: 25px;
-  letter-spacing: 25px;
+  color: #8f8f8f;
+  font-size: 30px;
 }
 .hero .banner .redes i {
   margin-left: 10px;
   margin-right: 10px;
 }
+.hero .banner .redes i:hover {
+  color: #e7e471;
+  cursor: pointer;
+}
 .hero .scrolldown a {
   position: absolute;
-  bottom: 80px;
+  bottom: 200px;
   left: 50%;
   margin-left: -29px;
-  color: #fff;
+  filter: drop-shadow(2px 4px 6px black);
+  color: rgba(152, 151, 151, 0.75);
   display: block;
   height: 42px;
   width: 42px;
   font-size: 42px;
   line-height: 42px;
-  color: #fff;
   border-radius: 100%;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+@media (max-width: 576px) {
+  .hero .scrolldown a {
+    bottom: 230px;
+    filter: drop-shadow(2px 4px 6px black);
+    color: rgba(152, 151, 151, 0.75);
+  }
+}
 .hero .scrolldown a:hover {
-  color: #11ABB0;
+  filter: drop-shadow(2px 4px 6px black);
+  color: #989797;
 }

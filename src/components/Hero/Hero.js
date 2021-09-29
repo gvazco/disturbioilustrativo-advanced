@@ -7,12 +7,12 @@ export default function Hero() {
       <div className="banner">
         <div className="banner-text">
           <h1 className="responsive-headline">por amor al arte</h1>
-          <div className="redes">
+          {/* <div className="redes">
             <Icon name="facebook" />
             <Icon name="instagram" />
             <Icon name="facebook messenger" />
             <Icon name="youtube" />
-          </div>
+          </div> */}
         </div>
       </div>
 
