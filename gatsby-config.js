@@ -1,17 +1,9 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: "https://www.disturbioilustrativo.com",
     title: "Disturbio Ilustrativo",
-    description: `Grupo de diseñadores y creativos unidos por el arte, la cultura y los negocios.`,
-    author: `@disturbioilustrativo`,
-    image: "",
-    url: `https://disturbioilustrativo.com`,
-    siteUrl: `https://disturbioilustrativo.com`,
-  },
-  flags: {
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    DEV_WEBPACK_CACHE: true,
-    PARALLEL_SOURCING: true,
-    FUNCTIONS: true,
+    description: "Grupo creativo enfocado en el diseño digital y no digital.",
+    author: "GustavoVazco",
   },
   plugins: [
     {
@@ -20,32 +12,53 @@ module.exports = {
         url: "https://disturbio-gatsby.disturbioilustrativo.com/graphql",
       },
     },
-    "gatsby-plugin-sass",
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `limelight`,
+          `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icono.png",
+        icon: "src/images/icon.png",
       },
     },
-    "gatsby-plugin-sharp",
+    "gatsby-plugin-mdx",
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          breakpoints: [750, 1080, 1366, 1920],
+          backgroundColor: `transparent`,
+        },
+      },
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: `${__dirname}/src/images/`,
+        path: `${__dirname}/src/images`,
       },
       __key: "images",
     },
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: "gatsby-source-filesystem",
       options: {
-        rule: {
-          include: /images\/icons/, // See below to configure properly
-        },
+        name: "pages",
+        path: `${__dirname}/src/pages`,
       },
+      __key: "pages",
     },
   ],
-}
+};

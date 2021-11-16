@@ -1,40 +1,46 @@
 {
-  "name": "disturbio-ilustrativo",
+  "name": "disturbio-advanced",
   "version": "1.0.0",
   "private": true,
-  "description": "Disturbio Ilustrativo",
+  "description": "disturbio-advanced",
   "author": "Gustavo",
   "keywords": [
     "gatsby"
   ],
   "scripts": {
     "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "bootstrap": "^5.0.1",
-    "gatsby": "^3.4.1",
-    "gatsby-awesome-pagination": "^0.3.8",
-    "gatsby-plugin-image": "^1.5.0",
-    "gatsby-plugin-manifest": "^3.5.0",
-    "gatsby-plugin-react-helmet": "^4.5.0",
-    "gatsby-plugin-react-svg": "^3.0.1",
-    "gatsby-plugin-sass": "^4.5.0",
-    "gatsby-plugin-sharp": "^3.5.0",
-    "gatsby-plugin-sitemap": "^4.1.0",
-    "gatsby-source-filesystem": "^3.5.0",
-    "gatsby-source-wordpress": "^5.12.0",
-    "gatsby-transformer-sharp": "^3.5.0",
-    "lodash": "^4.17.21",
+    "@mdx-js/mdx": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
+    "babel-plugin-styled-components": "^1.13.3",
+    "gatsby": "^4.1.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-image": "^2.1.0",
+    "gatsby-plugin-manifest": "^4.1.0",
+    "gatsby-plugin-mdx": "^3.1.0",
+    "gatsby-plugin-react-helmet": "^5.1.0",
+    "gatsby-plugin-sharp": "^4.1.0",
+    "gatsby-plugin-sitemap": "^5.1.0",
+    "gatsby-plugin-styled-components": "^5.1.0",
+    "gatsby-source-filesystem": "^4.1.0",
+    "gatsby-source-wordpress": "^6.1.0",
+    "gatsby-transformer-sharp": "^4.1.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
-    "react-bootstrap": "^1.6.0",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "sass": "^1.32.13",
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.3"
+    "react-slick": "^0.28.1",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "prettier": "2.2.1"
   }
 }

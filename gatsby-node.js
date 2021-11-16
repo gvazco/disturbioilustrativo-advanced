@@ -1,172 +1,134 @@
 const path = require("path")
-const { paginate } = require("gatsby-awesome-pagination")
+// const { paginate } = require("gatsby-awesome-pagination")
 
-exports.createPages = async ({ actions, graphql }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
-  /* -------------------------------------------------------------------------- */
-  /*                      Extraemos los datos desde graphql                     */
-  /* -------------------------------------------------------------------------- */
+  /* ------------------------------------------------------------------- */
+  /*                  Extraemos los datos desde Grapql                   */
+  /*---------------------------------------------------------------------*/
 
+  //Archivo de Blog
+  const archiveTemplate = path.resolve("./src/templates/archive.js")
   const posts = await graphql(`
-    query {
-      allWpPost(sort: { fields: date, order: DESC }) {
-        nodes {
-          id
-          title
-          content
-          slug
-          date
-          categories {
-            nodes {
-              name
-            }
-          }
-          featuredImage {
-            node {
-              localFile {
-                publicURL
-              }
-            }
+    {
+      wp {
+        readingSettings {
+          postsPerPage
+        }
+      }
+      allWpCategory {
+        edges {
+          node {
+            id
+            name
+            count
+            uri
+            slug
           }
         }
       }
     }
   `)
 
-  console.log(posts.data.allWpPost.nodes)
-
-  const portafolios = await graphql(`
-    query {
-      allWpProyecto(sort: { fields: date, order: DESC }) {
-        nodes {
-          id
-          slug
-          title
-          Seo {
-            seodescription
-            seotitle
-          }
-          Proyectos {
-            cliente
-          }
-          author {
-            node {
-              name
-            }
-          }
-          content
-          excerpt
-          featuredImage {
-            node {
-              localFile {
-                publicURL
-              }
-            }
-          }
-          categories {
-            nodes {
-              slug
-              name
-            }
+  const archivePortafolio = path.resolve("./src/templates/archivePortafolio.js")
+  const proyectos = await graphql(`
+    {
+      set: wp {
+        readingSettings {
+          postsPerPage
+        }
+      }
+      allWpCategoriaPortafolio {
+        edges {
+          node {
+            id
+            name
+            count
+            uri
+            slug
           }
         }
       }
     }
   `)
 
-  const artes = await graphql(`
-    query {
-      allWpArte {
-        nodes {
-          Artes {
-            url
-          }
-          id
-          slug
-          Seo {
-            seodescription
-            seotitle
-          }
-          author {
-            node {
-              name
-            }
-          }
-          content
-          excerpt
-          date
-          featuredImage {
-            node {
-              localFile {
-                publicURL
-              }
-            }
-          }
-          slug
-          title
-        }
-      }
+  //Check for errors
+  if (posts.errors) {
+    reporter.panicOnBuild(`Something went horrible wrong!`, posts.errors)
+    return
+  }
+
+  if (proyectos.errors) {
+    reporter.panicOnBuild(`Something went horrible wrong!`, proyectos.errors)
+    return
+  }
+
+  /* ------------------------------------------------------------------- */
+  /*                      Crear paginación dinámica                      */
+  /* ------------------------------------------------------------------- */
+
+  //Categoty Posts Data
+  const { wp, allWpCategory } = posts.data
+  //Create Pages for each category
+  allWpCategory.edges.forEach(category => {
+    const postsPerPage = wp.readingSettings.postsPerPage
+    const numberOfPosts = category.node.count
+    const numPages = Math.ceil(numberOfPosts / postsPerPage)
+
+    // Some Categories may be empty and we don't want to create pages for them
+    // Also don't want to create pages for uncategorized
+    if (numberOfPosts > 0 || category.node.name !== "uncategorized") {
+      Array.from({ length: numPages }).forEach((_, i) => {
+        createPage({
+          path: i === 0 ? category.node.uri : `${category.node.uri}${i + 1}`,
+          component: archiveTemplate,
+          context: {
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numPages,
+            currentPage: i + 1,
+            catId: category.node.id,
+            catName: category.node.name,
+            catUri: category.node.uri,
+            categories: allWpCategory,
+          },
+        })
+      })
     }
-  `)
-
-  /* ------------------------------------------------------------- */
-  /*                Crear paginación dinámica                      */
-  /* ------------------------------------------------------------- */
-  paginate({
-    createPage, // The Gatsby `createPage` function
-    items: posts.data.allWpPost.nodes, // An array of objects
-    itemsPerPage: 22, // How many items you want per page
-    pathPrefix: "/blog", // Creates pages like `/blog`, `/blog/2`, etc
-    component: path.resolve(`src/templates/blog.js`), // Just like `createPage()`
   })
 
-  paginate({
-    createPage, // The Gatsby `createPage` function
-    items: portafolios.data.allWpProyecto.nodes, // An array of objects
-    itemsPerPage: 12, // How many items you want per page
-    pathPrefix: "/portafolio", // Creates pages like `/blog`, `/blog/2`, etc
-    component: path.resolve(`src/templates/portafolio.js`), // Just like `createPage()`
+  //Category Proyecs Data
+  const { set, allWpCategoriaPortafolio } = proyectos.data
+  //Create Pages for each category
+  allWpCategoriaPortafolio.edges.forEach(categoria => {
+    const postsPerPage = set.readingSettings.postsPerPage
+    const numberOfPosts = categoria.node.count
+    const numPages = Math.ceil(numberOfPosts / postsPerPage)
+
+    // Some Categories may be empty and we don't want to create pages for them
+    // Also don't want to create pages for uncategorized
+    if (numberOfPosts > 0 || categoria.node.name !== "uncategorized") {
+      Array.from({ length: numPages }).forEach((_, i) => {
+        createPage({
+          path: i === 0 ? categoria.node.uri : `${categoria.node.uri}${i + 1}`,
+          component: archivePortafolio,
+          context: {
+            limit: postsPerPage,
+            skip: i * postsPerPage,
+            numPages,
+            currentPage: i + 1,
+            catId: categoria.node.id,
+            catName: categoria.node.name,
+            catUri: categoria.node.uri,
+            categoriasPortafolios: allWpCategoriaPortafolio,
+          },
+        })
+      })
+    }
   })
 
-  paginate({
-    createPage, // The Gatsby `createPage` function
-    items: artes.data.allWpArte.nodes, // An array of objects
-    itemsPerPage: 3, // How many items you want per page
-    pathPrefix: "/", // Creates pages like `/blog`, `/blog/2`, etc
-    component: path.resolve(`src/templates/artes.js`), // Just like `createPage()`
-  })
-
-  /* -------------------------------------------------------------- */
-  /*                  Crear ruta de pagina interna                  */
-  /* -------------------------------------------------------------- */
-  posts.data.allWpPost.nodes.forEach(post => {
-    createPage({
-      path: `/blog/${post.slug}`,
-      component: path.resolve(`src/templates/post/post.js`),
-      context: {
-        data: post,
-      },
-    })
-  })
-
-  portafolios.data.allWpProyecto.nodes.forEach(portafolio => {
-    createPage({
-      path: `/portafolio/${portafolio.slug}`,
-      component: path.resolve(`src/templates/proyecto/proyecto.js`),
-      context: {
-        data: portafolio,
-      },
-    })
-  })
-
-  artes.data.allWpArte.nodes.forEach(arte => {
-    createPage({
-      path: `/artes/${arte.slug}`,
-      component: path.resolve(`src/templates/arte/arte.js`),
-      context: {
-        data: arte,
-      },
-    })
-  })
+  /* ----------------------------------------------------------------- */
+  /*                    Crear ruta de pagina interna                   */
+  /* ----------------------------------------------------------------- */
 }
