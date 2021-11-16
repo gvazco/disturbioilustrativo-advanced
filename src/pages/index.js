@@ -6,7 +6,7 @@ import Layout from "../components/Layout/Layout"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Disturbio Ilustrativo" />
     <CTAArea />
     <About />
   </Layout>
