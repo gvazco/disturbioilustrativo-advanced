@@ -9,7 +9,7 @@ const PageSidebar = ({ children, parentChildren, currentPage, parent }) => {
     //Page with children, show menu
     <>
       <li className="sidebar-menu-header">
-        <img src={PageIcon} alt="CakeIt Page" />
+        <img src={PageIcon} alt="Disturbio Page" />
         <span dangerouslySetInnerHTML={{ __html: currentPage.title }} />
       </li>
       {children.nodes.map(child => (

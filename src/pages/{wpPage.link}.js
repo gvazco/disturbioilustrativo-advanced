@@ -32,6 +32,19 @@ const PageContent = styled.article`
   margin-top: 20px;
   max-width: 800px;
 
+  h1 {
+    line-height: 45px;
+    font-weight: 600;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  a:hover {
+    color: #000;
+  }
+
   iframe {
     width: 100%;
   }
@@ -62,7 +75,6 @@ const PageTemplate = ({ data }) => (
         >
           {data.wpPage.wpChildren}
         </PageSidebar>
-
         <PageContent>
           <h1 dangerouslySetInnerHTML={{ __html: data.wpPage.title }} />
 

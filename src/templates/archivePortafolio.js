@@ -69,17 +69,21 @@ const archivePortafolio = ({
                   </Link>
                 </Image>
               ) : null}
-              <Link to={proyect.node.uri}>
-                <StyledH2
-                  dangerouslySetInnerHTML={{ __html: proyect.node.title }}
-                />
-              </Link>
+              <div className="content">
+                <Link to={proyect.node.uri}>
+                  <StyledH2
+                    dangerouslySetInnerHTML={{ __html: proyect.node.title }}
+                  />
+                </Link>
 
-              <StyledDate
-                dangerouslySetInnerHTML={{ __html: proyect.node.date }}
-              />
-              <p dangerouslySetInnerHTML={{ __html: proyect.node.excerpt }} />
-              <StyledReadMore to={proyect.node.uri}>Leer más...</StyledReadMore>
+                <StyledDate
+                  dangerouslySetInnerHTML={{ __html: proyect.node.date }}
+                />
+                <p dangerouslySetInnerHTML={{ __html: proyect.node.excerpt }} />
+                <StyledReadMore to={proyect.node.uri}>
+                  Leer más...
+                </StyledReadMore>
+              </div>
               <div className="dot-divider" />
             </article>
           ))}

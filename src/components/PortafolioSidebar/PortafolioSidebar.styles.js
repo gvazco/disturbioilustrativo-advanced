@@ -30,7 +30,7 @@ export const Menu = styled.ul`
   }
 
   .sidebar-menu-header {
-    font-family: "Teko", Arial, Helvetica, sans-serif;
+    font-family: "Chub Gotic", sans-serif;
     border-bottom: 2px #e4e4e4 solid;
     font-weight: 600;
     letter-spacing: 1px;
@@ -43,8 +43,8 @@ export const Menu = styled.ul`
   li {
     margin: 0 0 5px 0px;
     color: #000;
-    font-family: "Teko", Arial;
-    font-size: 20px;
+    font-family: "Chub Gotic", sans-serif;
+    font-size: 18px;
     font-weight: 400;
     letter-spacing: 1px;
 

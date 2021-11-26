@@ -48,15 +48,6 @@ export const ContentWrapper = styled.div`
 export const PageContent = styled.article`
   margin: 20px 0 20px 0;
 
-  ${
-    "" /* .dot-divider {
-    width: 100%;
-    height: 5px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid lightgrey;
-  } */
-  }
-
   .entry-content {
       margin-bottom:30px;
       border-radius: 9px;
@@ -88,14 +79,14 @@ export const StyledH2 = styled.h2`
 `
 
 export const StyledDate = styled.div`
-  font-family: "Teko";
+  font-family: "Chub Gotic", sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
 `
 
 export const StyledReadMore = styled(Link)`
-  font-family: "Teko", Arial, Helvetica, sans-serif;
-  font-size: 1rem;
+  font-family: "Chub Gotic", sans-serif;
+  font-size: 0.85rem;
   font-weight: 800;
   color: #000;
   position: relative;

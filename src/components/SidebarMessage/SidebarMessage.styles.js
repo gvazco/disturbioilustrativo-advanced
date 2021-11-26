@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const Wrapper = styled.div`
-  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-family: "Teko", Arial, Helvetica, sans-serif;
   font-weight: 600;
   margin: 0 0 20px 0;
 
@@ -11,6 +11,11 @@ export const Wrapper = styled.div`
     margin: 0;
     line-height: 1.2rem;
     margin-top: 10px;
+    color: #fff;
+
+    a {
+      color: #fff;+
+    }
   }
 
   div {
@@ -24,6 +29,7 @@ export const Wrapper = styled.div`
       margin-bottom: 3px;
       width: 30px;
       height: auto;
+      filter: invert(100%);
     }
 
     span {
@@ -32,4 +38,4 @@ export const Wrapper = styled.div`
       text-transform: uppercase;
     }
   }
-`;
+`
