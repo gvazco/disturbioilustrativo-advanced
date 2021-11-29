@@ -38,15 +38,18 @@ export const CTAImageTextWrapper = styled.div`
 `
 
 export const CTAImageText = styled.p`
-  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.9);
-  font-family: "Teko";
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 0px #1d1d1d, 3px 3px 0px #1d1d1d, 4px 4px 2px #60c1aa;
+  font-family: "Chub Gotic", sans-serif;
+  font-weight: 500;
+  letter-spacing: 2.5px;
   font-size: 1.3rem;
   text-transform: uppercase;
   margin: 0px;
   padding: 10px;
-
+  max-width: 80%;
+  text-align: center;
+  position: absolute;
+  left: 12px;
   opacity: 0.01;
 
   :hover {
@@ -63,5 +66,7 @@ export const CTAImageText = styled.p`
 
   @media (min-width: 1200px) {
     font-size: 1.5rem;
+    position: absolute;
+    left: 20px;
   }
 `

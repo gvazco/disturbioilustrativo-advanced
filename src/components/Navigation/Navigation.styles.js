@@ -30,6 +30,7 @@ export const Wrapper = styled.nav`
       padding: 0 0 0 10px;
       transition: all 0.2s ease;
       text-decoration: none;
+
       color: #fff;
 
       div {
@@ -59,7 +60,7 @@ export const Wrapper = styled.nav`
     top: 30px;
     text-transform: none;
     border-bottom: 1px solid #e7e7e7;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     padding: 15px 10px 10px 10px;
     box-shadow: 0px 6px 23px -10px rgba(0, 0, 0, 0.5);
   }
@@ -73,6 +74,8 @@ export const Wrapper = styled.nav`
     padding: 5px 10px;
     text-decoration: none;
     white-space: nowrap;
+    letter-spacing: 3px;
+    text-transform: uppercase;
   }
 
   @keyframes fadeInMenu {

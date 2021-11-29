@@ -13,6 +13,13 @@ module.exports = {
       },
     },
     {
+      resolve: `@ccalamos/gatsby-source-googlemaps-static`,
+      options: {
+        key: `AIzaSyB7tu_7aEL6vS_Of-MtZQ-kZ4cvY2d_3KM`,
+        center: `Chicago, IL`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
@@ -61,4 +68,4 @@ module.exports = {
       __key: "pages",
     },
   ],
-};
+}

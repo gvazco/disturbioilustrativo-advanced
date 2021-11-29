@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import Header from "../Header/Header"
 import OverlayMenu from "../OverlayMenu/OverlayMenu"
 import Hamburger from "../Hamburger/Hambuger"
+import Footer from "../Footer/Footer"
 import { GlobalStyles, Primary } from "./Layout.styles"
 
 const Layout = ({ children }) => {
@@ -15,6 +16,7 @@ const Layout = ({ children }) => {
       <OverlayMenu menuOpen={menuOpen} callback={handleOverlayMenu} />
       <Header />
       <Primary>{children}</Primary>
+      <Footer />
     </>
   )
 }
